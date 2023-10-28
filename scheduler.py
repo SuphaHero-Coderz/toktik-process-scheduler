@@ -24,6 +24,6 @@ while True:
     msg = sub.get_message()
     if msg:
         print(f"new message in channel {msg['channel']}: {msg['data']}")
-        url_post = "http://backend:80/update_video_status"
+        url_post = "http://backend:80/api/update_video_status"
         requests.post(url_post, json=json.loads(msg['data']))
         time.sleep(10)
